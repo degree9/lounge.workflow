@@ -1,0 +1,19 @@
+(ns lounge.workflow
+  (:require [lounge.state  :as state]
+            [silicone.iron :as iron]
+            [silicone.neon :as neon]
+            [goog.dom]))
+
+(def flow-manager-attr
+  {:id "workflows"
+   :entry-animation "slide-from-right-animation"
+   :exit-animation "slide-left-animation"
+   :attr-for-selected "route"
+   :class {:horizontal true :layout true :wrap true}})
+
+(defelem flow-manager [attr & kids]
+  (neon/neon-animated-pages (merge flow-manager-attr attr) kids))
+
+(defn flow [name & kids]
+  (div {:route (str "#!/" name)
+        :class {:horizontal true :layout true :wrap true}} kids))
