@@ -10,8 +10,9 @@
 
 (require
  '[adzerk.bootlaces :refer :all]
- '[boot-semver.core :refer :all]
- '[lounge.boot :refer :all])
+ '[hoplon.boot-hoplon :refer :all]
+ '[lounge.boot :refer :all]
+ '[boot-semver.core :refer :all])
 
 (task-options!
  pom {:project 'degree9/lounge.workflow
